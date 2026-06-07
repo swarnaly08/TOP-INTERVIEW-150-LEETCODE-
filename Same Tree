@@ -1,0 +1,14 @@
+class Solution:
+    def isSameTree(self, p, q):
+        # If both nodes are None, they are identical
+        if not p and not q:
+            return True
+        
+        # If one is None and the other is not
+        if not p or not q:
+            return False
+        
+        # Values must match, and both subtrees must match
+        return (p.val == q.val and
+                self.isSameTree(p.left, q.left) and
+                self.isSameTree(p.right, q.right))
