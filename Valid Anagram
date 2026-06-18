@@ -1,0 +1,16 @@
+import sys
+
+def isAnagram(s: str, t: str) -> bool:
+    if len(s) != len(t):
+        return False
+
+    return sorted(s) == sorted(t)
+
+if __name__ == "__main__":
+    data = sys.stdin.read().split()
+
+    if len(data) >= 2:
+        s = data[0]
+        t = data[1]
+
+        print("true" if isAnagram(s, t) else "false")
